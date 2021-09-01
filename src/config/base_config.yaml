@@ -1,0 +1,14 @@
+defaults:
+  # put the default setting here
+
+hydra:
+  run:
+    dir: results/single/${now:%Y-%m-%d_%H-%M-%S}/${hydra.job.override_dirname}/seed=${seed}
+  sweep:
+    dir: results/sweep/${now:%Y-%m-%d_%H-%M-%S}
+    subdir: ${hydra.job.override_dirname}/seed=${seed}
+  job:
+    config:
+      override_dirname:
+        exclude_keys:
+          - seed
