@@ -1,8 +1,9 @@
 #
-ARG NVIDIA_CONTAINER_IMAGE_VERSION = 21.03
+ARG NVIDIA_CONTAINER_IMAGE_VERSION=21.03
 
 # base image
 FROM nvcr.io/nvidia/pytorch:${NVIDIA_CONTAINER_IMAGE_VERSION}-py3
+ENV DEBIAN_FRONTEND noninteractive
 
 LABEL maintainer "Yoshiki Kubotani <yoshikikubotani.lab@gmail.com>"
 
