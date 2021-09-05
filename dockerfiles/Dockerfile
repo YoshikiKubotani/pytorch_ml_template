@@ -11,4 +11,4 @@ RUN apt update && DEBIAN_FRONTEND noninteractive apt install --no-install-recomm
     && rm -rf /var/lib/apt/lists/*
 
 # poetry
-RUN pip3 --proxy=${HTTP_PROXY} install poetry
+RUN pip3 --proxy=${HTTP_PROXY} --no-cache-dir install poetry
